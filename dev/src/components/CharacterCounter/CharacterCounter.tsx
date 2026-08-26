@@ -73,7 +73,8 @@ export const CharacterCounter: React.FC<CharacterCounterProps> = ({
     
     const handleTextChange = (newText: string) => {
         const trimmed = newText.trim();
-        const words = trimmed === "" ? [] : trimmed.split(' ');
+        let words = trimmed === "" ? [] : trimmed.split(' ');
+        words = words.filter(element => element !== '');
 
         setColor(words.length < minWords || words.length > maxWords ? 'text-red-800' : 'text-green-900')
 
@@ -91,11 +92,11 @@ export const CharacterCounter: React.FC<CharacterCounterProps> = ({
     };
 
     return (
-        <section>
+        <section className="bg-white rounded-2xl p-5">
             <TextInput
             onTextChange={handleTextChange}>
             </TextInput>
-            <div className="bg-white flex flex-col rounded-2xl p-5 w-full">
+            <div className="flex flex-col p-5 w-full">
                 <StatsDisplay stats={stats} showReadingTime={showReadingTime} color={color}/>
                 <p className="mx-auto">Min: {minWords} | Max: {maxWords}</p>
             </div>
