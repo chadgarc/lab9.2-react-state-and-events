@@ -92,7 +92,7 @@ export const CharacterCounter: React.FC<CharacterCounterProps> = ({
     };
 
     return (
-        <section className="bg-white rounded-2xl p-5">
+        <section className="bg-white rounded-2xl p-5 w-140">
             <TextInput
             onTextChange={handleTextChange}>
             </TextInput>

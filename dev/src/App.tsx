@@ -30,7 +30,9 @@ function App() {
   const targetReadingTime = 200
   
   return (
-    <CharacterCounter minWords={minWords} maxWords={maxWords} targetReadingTime={targetReadingTime}/>
+    <section className='flex h-screen w-full justify-center items-center'>
+      <CharacterCounter minWords={minWords} maxWords={maxWords} targetReadingTime={targetReadingTime}/>
+    </section>
   )
 }
 
